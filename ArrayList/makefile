@@ -3,7 +3,7 @@ TESTFILE = "testStaticList"
 FILE = "staticList"
 VALGRINDFLAGS = --leak-check=full --show-leak-kinds=all --log-file=valgrind.txt
 
-all: compile cppcheck run_test linker clean 
+all: compile cppcheck linker clean 
 
 compile:
 	g++ -Wall -Wextra -lm -g -std=c++17 ./*.cpp -c
@@ -14,9 +14,10 @@ cppcheck:
 run_test:
 	g++ $(FILE).o $(TESTFILE).o /usr/local/lib/libgtest.a -o $(TESTFILE).bin -lpthread
 	valgrind $(VALGRINDFLAGS) ./$(TESTFILE).bin
-	rm -rf $(TESTFILE).bin $(TESTFILE).o
+	rm -rf $(TESTFILE).bin 
 
 linker:
+	rm -rf $(TESTFILE).o
 	g++ ./*.o -o main.exe
 
 clean:
