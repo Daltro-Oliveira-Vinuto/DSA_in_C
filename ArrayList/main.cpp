@@ -21,16 +21,16 @@ int main(int argc, char **argv) {
   if (list != NULL) {
     print_list(list);
     for (int i = 0; i < total; i+= 1) {
-      add_begin(list, array[i]);
+      add_end(list, array[i]);
       print_list(list);
     }
-    printf("======\n");
+    printf("======================\n");
     if (Working == search_pos(list, 5, &student_aux)) {
       print_student(student_aux);
     }
-    printf("======\n\n");
+    printf("=====================\n\n");
     for (int i = 0; i < total; i+= 1) {
-      remove_begin(list);
+      remove_end(list);
       print_list(list);
     }
   }
