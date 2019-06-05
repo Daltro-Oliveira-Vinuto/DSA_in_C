@@ -24,9 +24,11 @@ int main(int argc, char **argv) {
       add_begin(list, array[i]);
       print_list(list);
     }
+    printf("======\n");
     if (Working == search_pos(list, 5, &student_aux)) {
       print_student(student_aux);
     }
+    printf("======\n\n");
     for (int i = 0; i < total; i+= 1) {
       remove_begin(list);
       print_list(list);

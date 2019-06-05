@@ -127,7 +127,7 @@ State remove_pos(List* list, int pos) {
 // Search for a element ===================================================================================
 State search_pos(List* list, int pos, Student *s) {
   State state;
-  if (list == NULL || empty_list(list) == True || pos <= 0 || pos >= list->max) {
+  if (list == NULL || empty_list(list) == True || pos <= 0 || pos > list->max) {
     state = Failed;
   } else {
     *s = list->array[pos-1];
